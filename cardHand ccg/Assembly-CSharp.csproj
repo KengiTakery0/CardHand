@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\CardInfo.cs" />
     <Compile Include="Assets\Scripts\GenerateCard.cs" />
     <Compile Include="Assets\Scripts\CardSpawner.cs" />
+    <Compile Include="Assets\Scripts\CardDrag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

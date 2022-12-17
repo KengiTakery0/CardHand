@@ -8,7 +8,7 @@ public class CardInfo : MonoBehaviour
     private int helthPoints;
     private int damagePoints;
     private int mannaPoints;
-    private RawImage cardImage;
+    
     private string cardName;
     private string cardDiscription;
 
@@ -23,10 +23,9 @@ public class CardInfo : MonoBehaviour
         mannaPoints = mp;
         return mannaPoints;
     }  
-    public int SetDamage(int dp)
+    public void SetDamage(int dp)
     {
         damagePoints = dp;
-        return damagePoints;
     }
     public string SetName(string name)
     {

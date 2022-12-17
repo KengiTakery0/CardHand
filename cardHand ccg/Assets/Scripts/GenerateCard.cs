@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 public class GenerateCard : MonoBehaviour
 {
+    CardSpawner spawner;
     CardInfo cardInfo;
     int maxValue = 9;
     int minValue = -2;
@@ -36,17 +37,15 @@ public class GenerateCard : MonoBehaviour
     private void Awake()
     {
         cardInfo = GetComponent<CardInfo>();
-    }
-    private void Start()
-    {
+        spawner = FindObjectOfType<CardSpawner>();  
         CreateCard();
         while(cardInfo.GetHelth() <= 0 || cardInfo.GetManna() <= 0 || cardInfo.GetDamage() <= 0)
         {
             CreateCard();
+            
         }
-        
-        
     }
+    
     private void CreateCard()
     {
         GenerateImage();

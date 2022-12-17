@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardSpawner : MonoBehaviour
 {
     [SerializeField] GameObject card;
-    List<GameObject> cards = new List<GameObject>();
     [SerializeField] List<GameObject> targets = new List<GameObject>();
+    public List<GameObject> cards = new List<GameObject>();
     int cardRandimNum = 0;
     void Start()
     {
@@ -15,18 +16,16 @@ public class CardSpawner : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void InstantiateCards()
     {
         for (int i = 0; i < cardRandimNum; i++)
         {
-            cards.Add(card);
-            GameObject g = Instantiate(cards[i], targets[i].transform);
+            GameObject g = Instantiate(card, targets[i].transform);
             g.transform.position = targets[i].transform.position;
+            g.transform.rotation = targets[i].transform.rotation;
+            cards.Add(g);
         }
     }
+
+    
 }
